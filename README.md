@@ -20,19 +20,35 @@ This project was created for a university assignment on competing GPUs. It demon
 - Wins approximately 85% of games against random play
 
 ### GPU 2: Random Strategy  
-- Takes 1, 3, or 3 objects randomly each turn
+- Takes 1, 2, or 3 objects randomly each turn
 - No look-ahead or strategic planning
 - Wins about 15% of games by chance
 
 ## Project Structure
 gpu-nim-game/
-├── nim_game.cu # Main CUDA implementation
-├── nim_game.h # Header file with function declarations
-├── Makefile # Build configuration
-└── README.md # This file
+
+├── nim_game.cu 
+
+├── nim_game.h 
+
+├── Makefile 
+
+└── README.md 
 
 
+## Technical Implementation Details
 
+### CUDA Parallelization
+
+- The game runs thousands of simulations in parallel on the GPU
+- Each CUDA thread handles one complete game
+- Uses curand library for parallel random number generation
+
+### Memory Management
+
+- Allocates device memory for game states and results
+- Efficiently transfers data between host and device
+- Proper cleanup to avoid memory leaks
 
 ## How to Run This Project
 
@@ -52,17 +68,5 @@ I developed this project on Google Colab since I'm using a Mac without an NVIDIA
 
 # Run the game
 !./nim_game
-
-#If you have an NVIDIA GPU and CUDA toolkit installed:
-# Clone the repository
-git clone https://github.com/[your-username]/gpu-nim-game.git
-cd gpu-nim-game
-
-# Compile (try different architectures if needed)
-make
-
-# Run the game
-./nim_game```
-
 
 
