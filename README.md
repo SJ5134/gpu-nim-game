@@ -62,7 +62,8 @@ make
 # Run the game
 ./nim_game
 
-##Technical Implementation Details
+
+###Technical Implementation Details
 
 #CUDA Parallelization
 
