@@ -25,3 +25,39 @@ This project was created for a university assignment on competing GPUs. It demon
 - Wins about 15% of games by chance
 
 ## Project Structure
+gpu-nim-game/
+├── nim_game.cu # Main CUDA implementation
+├── nim_game.h # Header file with function declarations
+├── Makefile # Build configuration
+└── README.md # This file
+
+
+## How to Run This Project
+
+### On Google Colab (Recommended)
+
+I developed this project on Google Colab since I'm using a Mac without an NVIDIA GPU. Here's how to run it:
+
+1. Go to [colab.research.google.com](https://colab.research.google.com)
+2. Create a new notebook
+3. Set up GPU: **Runtime → Change runtime type → GPU**
+4. Upload the `.cu` files or clone this repository
+5. Run these commands:
+
+```bash
+# Compile the code
+!nvcc -arch=sm_50 -o nim_game nim_game.cu -lcurand
+
+# Run the game
+!./nim_game
+
+#If you have an NVIDIA GPU and CUDA toolkit installed:
+# Clone the repository
+git clone https://github.com/[your-username]/gpu-nim-game.git
+cd gpu-nim-game
+
+# Compile (try different architectures if needed)
+make
+
+# Run the game
+./nim_game
