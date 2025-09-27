@@ -60,7 +60,7 @@ cd gpu-nim-game
 make
 
 # Run the game
-./nim_game'''
+./nim_game```
 
 ###Technical Implementation Details
 
