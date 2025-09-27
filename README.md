@@ -31,19 +31,7 @@ gpu-nim-game/
 ├── Makefile # Build configuration
 └── README.md # This file
 
-###Technical Implementation Details
 
-#CUDA Parallelization
-
-- The game runs thousands of simulations in parallel on the GPU
-- Each CUDA thread handles one complete game
-- Uses curand library for parallel random number generation
-
-#Memory Management
-
-- Allocates device memory for game states and results
-- Efficiently transfers data between host and device
-- Proper cleanup to avoid memory leaks
 
 
 ## How to Run This Project
